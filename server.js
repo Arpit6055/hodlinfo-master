@@ -3,6 +3,8 @@ const axios = require("axios");
 const path = require("path");
 const app = express();
 
+const PORT = process.env.PORT || 3000;
+
 // set the view engine to ejs
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname + "/views")));
@@ -23,4 +25,4 @@ app.get("/", async (req, res) => {
   }
 });
 
-app.listen(3000, console.log("Running"));
+app.listen(PORT, console.log("Running"));
